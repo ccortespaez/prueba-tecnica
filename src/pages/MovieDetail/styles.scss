@@ -1,0 +1,46 @@
+.movie {
+  z-index: 5;
+  display: flex;
+  width: 900px;
+  margin: auto;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1;
+  overflow: hidden;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__poster {
+    border-radius: 12px;
+    height: 250px;
+    object-fit: cover;
+    background-repeat: no-repeat;
+  }
+
+  &__data {
+    margin-left: 20px;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__overview {
+    font-size: 14px;
+  }
+}
+
+.backdrop {
+  z-index: inherit;
+  position: relative;
+  height: 50vh;
+  background-size: cover;
+  background-position: bottom;
+  object-fit: cover;
+  background-position: top;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+}

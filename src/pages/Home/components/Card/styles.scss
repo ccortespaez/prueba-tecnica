@@ -1,0 +1,37 @@
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  width: 200px;
+  height: 350px;
+
+  &__container {
+    display: flex;
+  }
+
+  &__body {
+    width: 100%;
+    display: flex;
+    position: relative;
+  }
+
+  &__image {
+    border-radius: 6px;
+    width: 200px;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+
+  &__title {
+    bottom: 10px;
+    text-align: center;
+    color: white;
+
+    @media screen and (max-width: 600px) {
+      & {
+        display: none;
+      }
+    }
+  }
+}
