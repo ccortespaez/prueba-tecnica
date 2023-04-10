@@ -4,8 +4,8 @@ import { getCast } from '../../api/api'
 import { useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import './styles.scss'
 import { Cast } from '../../interfaces/interfaces';
+import './index.scss'
 
 const MovieDetail = () => {
   const navigate = useNavigate();
