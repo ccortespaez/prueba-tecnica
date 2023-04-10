@@ -1,9 +1,13 @@
 .card {
-  display: flex;
-  flex-wrap: wrap;
   box-sizing: border-box;
-  width: 200px;
-  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  &--width {
+    width: 250px !important;
+  }
 
   &__container {
     display: flex;
@@ -17,14 +21,16 @@
 
   &__image {
     border-radius: 6px;
-    width: 200px;
+    width: 120px;
     object-fit: cover;
     background-repeat: no-repeat;
     position: relative;
   }
 
   &__title {
-    bottom: 10px;
+    text-decoration: none;
+    width: 300px;
+    margin-bottom: 50px;
     text-align: center;
     color: white;
 

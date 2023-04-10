@@ -1,0 +1,94 @@
+.blur-in {
+  animation: blur-in 1s linear both
+}
+
+.home {
+  width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.592), rgb(0, 0, 0)), url('../../assets/6.jpg');
+  background-size: cover;
+  background-position: bottom;
+  animation: blur-in 1s linear both;
+
+  @keyframes blur-in {
+    0% {
+      filter: blur(12px);
+      opacity: 0
+    }
+
+    100% {
+      filter: blur(0);
+      opacity: 1
+    }
+  }
+
+  &__container {
+    font-size: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__title {
+    color: white;
+    text-align: center;
+    line-height: 1;
+    font-weight: 400;
+
+    &--red {
+      color: red;
+    }
+
+    @media screen and (max-width: 1200px) {
+      font-size: 65px
+    }
+  }
+
+  &__subtitle {
+    margin-top: 150px;
+    font-size: 25px;
+
+    @media screen and (max-width: 576px) {
+      font-size: 16px
+    }
+  }
+
+  &__span {
+    text-align: center;
+    &--red {
+      color: red;
+    }
+
+    @media screen and (max-width: 1200px) {
+      font-size: 25px
+    }
+
+    @media screen and (max-width: 576px) {
+      font-size: 20px;
+    }
+  }
+}
+
+.swiper-wrapper {
+  position: relative;
+  margin-top: 130px;
+
+  @media screen and (max-width: 666px) {
+    margin-top: 50px;
+  }
+}
+
+.swiper-slide,
+swiper-slide {
+  width: 150px !important;
+}
+
+.card-group {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}

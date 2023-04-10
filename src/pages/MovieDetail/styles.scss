@@ -1,12 +1,9 @@
 .movie {
-  z-index: 5;
   display: flex;
-  width: 900px;
   margin: auto;
   align-items: center;
   flex-direction: column;
-  z-index: 1;
-  overflow: hidden;
+  position: relative;
 
   &__container {
     display: flex;
@@ -31,6 +28,13 @@
 
   &__overview {
     font-size: 14px;
+  }
+
+  &__backdrop {
+    width: 100%;
+    height: 100%;
+    filter: blur(10px);
+    position: absolute;
   }
 }
 

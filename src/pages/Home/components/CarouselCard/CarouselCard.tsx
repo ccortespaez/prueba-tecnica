@@ -3,7 +3,7 @@ import { getUpcomingMovies } from '../../../../api/api';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { MovieContext } from '../../../../context/MoviesContext';
 import { Link } from 'react-router-dom'
-import Card from '../Card/Card';
+import Card from '../../../../components/Card/Card';
 import 'swiper/css';
 
 const CarouselCard = () => {
@@ -11,7 +11,7 @@ const CarouselCard = () => {
   const { movies, setMovies, page, setPage, setSelectedMovie } = useContext(MovieContext)
 
   const loadUncomingMovies = async () => {
-    const moviesData = await  getUpcomingMovies(page);
+    const moviesData = await getUpcomingMovies(page);
     setMovies((prevMovies: []) => [...prevMovies, ...moviesData.results]);
   };
 
@@ -19,7 +19,7 @@ const CarouselCard = () => {
     loadUncomingMovies()
   }, [page])
 
-  const handleSelectedMovie = (movie: any) => {
+  const handleSelectedMovie = (movie) => {
     setSelectedMovie(movie)
   }
 
@@ -27,7 +27,7 @@ const CarouselCard = () => {
     return movies?.map(({ title, id, poster_path: posterPath, backdrop_path: backdropPath, overview }) =>
       <SwiperSlide>
         <Link to={`/movie/${id}`}>
-          <Card title={title} image={posterPath} handleClick={() => handleSelectedMovie({ id, title, posterPath, backdropPath, overview, setSelectedMovie })} />
+          <Card image={posterPath} handleClick={() => handleSelectedMovie({ id, title, posterPath, backdropPath, overview, setSelectedMovie })} />
         </Link>
       </SwiperSlide>)
   }
@@ -37,8 +37,7 @@ const CarouselCard = () => {
       {
         movies ? (
           <Swiper
-            spaceBetween={5}
-            slidesPerView={5}
+            slidesPerView={6}
             onReachEnd={() => setPage(page + 1)}
           >
             {renderMovies()}

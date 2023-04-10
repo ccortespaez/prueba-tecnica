@@ -7,13 +7,13 @@ export type MovieContextType = {
   setSelectedMovie: any
 }
 
-type SelectedMovie = {
+export type SelectedMovie = {
   id: number
   title: string
+  posterPath: string
   backdropPath: string
   overview: string
-  posterPath: string
-  cast: Cast[]
+  cast: []
 }
 
 export type Cast = {
@@ -25,9 +25,8 @@ export type Movie = {
   id: number
   title: string
   release_date: string
-  poster_path: string | null
+  poster_path: string
   overview: string
   backdrop_path: string
-  cast: Cast
 }
 
