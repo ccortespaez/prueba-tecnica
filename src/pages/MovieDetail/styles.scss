@@ -1,14 +1,23 @@
 .movie {
+  width: 100%;
   display: flex;
-  margin: auto;
-  align-items: center;
-  flex-direction: column;
+  justify-content: center;
   position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
 
   &__container {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    margin-top: 100px;
+    background: rgba(0, 0, 0, 0.658);
+    justify-content: space-between;
+    padding: 50px;
+    border-radius: 6px;
+    @media screen and (max-width: 900px) {
+      flex-direction: column;
+      background: none;
+      margin-top: 10px;
+    }
   }
 
   &__poster {
@@ -19,32 +28,61 @@
   }
 
   &__data {
+    width: 500px;
     margin-left: 20px;
+    @media screen and (max-width: 900px) {
+      width: 320px;
+      margin-left: 0;
+    }
   }
 
   &__title {
+    font-size: 36px;
     margin-bottom: 10px;
+    @media screen and (max-width: 900px) {
+      text-align: center;
+      margin-top: 20px
+    }
   }
 
   &__overview {
-    font-size: 14px;
+    font-size: 16px;
+    text-align: justify;
   }
 
   &__backdrop {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     filter: blur(10px);
     position: absolute;
   }
+
+  &__cast-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__cast-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__cast-name {
+    text-align: center;
+    font-size: 12px;
+  }
+
+  &__cast-image {
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+  }
 }
 
-.backdrop {
-  z-index: inherit;
+.swiper-wrapper {
   position: relative;
-  height: 50vh;
-  background-size: cover;
-  background-position: bottom;
-  object-fit: cover;
-  background-position: top;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+  margin-top: 30px !important;
 }

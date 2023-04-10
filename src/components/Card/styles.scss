@@ -5,6 +5,10 @@
   align-items: center;
   flex-direction: column;
 
+  @media screen and (max-width: 666px) {
+    margin: 20px 0;
+  }
+
   &--width {
     width: 250px !important;
   }
@@ -30,6 +34,7 @@
   &__title {
     text-decoration: none;
     width: 300px;
+    margin-top: 15px;
     margin-bottom: 50px;
     text-align: center;
     color: white;

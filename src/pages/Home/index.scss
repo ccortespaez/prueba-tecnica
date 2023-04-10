@@ -71,24 +71,17 @@
   }
 }
 
-.swiper-wrapper {
-  position: relative;
-  margin-top: 130px;
-
-  @media screen and (max-width: 666px) {
-    margin-top: 50px;
-  }
-}
-
-.swiper-slide,
-swiper-slide {
-  width: 150px !important;
-}
-
 .card-group {
   margin-top: 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  a{
+    text-decoration: none;
+  }
+
+  @media screen and (max-width: 666px) {
+    flex-direction: column;
+  }
 }

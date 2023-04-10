@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from 'react'
+import { useState, useContext, useEffect, SetStateAction } from 'react'
 import { Link } from 'react-router-dom'
 import { getPopularMovies } from '../../api/api'
 import { MovieContext } from '../../context/MoviesContext'
@@ -6,6 +6,7 @@ import { widthScreen } from '../../helpers'
 import CarouselCard from './components/CarouselCard/CarouselCard'
 import Card from '../../components/Card/Card'
 import './index.scss'
+import { Movie } from '../../interfaces/interfaces'
 
 const Home = () => {
 
@@ -17,7 +18,7 @@ const Home = () => {
     setPopularMovies(data.results)
   }
 
-  const handleSelectedMovie = (movie) => {
+  const handleSelectedMovie = (movie: SetStateAction<Movie>) => {
     setSelectedMovie(movie)
   }
 
@@ -32,9 +33,9 @@ const Home = () => {
   console.log(screenWidth)
 
   const renderPopularMovies = () => {
-    return popularMovies.map(({ title, id, poster_path: posterPath, backdrop_path: backdropPath, overview }) => (
+    return popularMovies.map(({ title, id, poster_path, backdrop_path, overview }) => (
       <Link to={`/movie/${id}`}>
-        <Card width={true} title={title} image={posterPath} handleClick={() => handleSelectedMovie({ id, title, posterPath, backdropPath, overview, setSelectedMovie})} />
+        <Card width={true} title={title} image={poster_path} handleClick={() => handleSelectedMovie({ id, title, poster_path, backdrop_path, overview, cast:[], setSelectedMovie})} />
       </Link>
     )
     )
