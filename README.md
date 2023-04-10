@@ -2,6 +2,7 @@
 ## Comenzando 🚀
 
 Consumo de de TheMovieDB API que obtiene las peliculas por estrenar y las peliculas populares.
+No se utilizaron frameworks css, fue todo hecho con scss utilizando flexbox.
 
 ### Pre-requisitos 📋
 
